@@ -1,0 +1,22 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/logan/ros2_ws/install/rplidar_ros/include/**",
+        "/home/logan/ros2_ws/install/micro_ros_agent/include/**",
+        "/home/logan/ros2_ws/install/micro_ros_msgs/include/**",
+        "/home/logan/ros2_ws/install/drive_base_msgs/include/**",
+        "/opt/ros/galactic/include/**",
+        "/home/logan/ros2_ws/src/rplidar_ros2/include/**",
+        "/home/logan/ros2_ws/src/uros/micro-ROS-Agent/micro_ros_agent/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}
