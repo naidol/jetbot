@@ -10,13 +10,11 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
-MY_NEO_ROBOT = os.environ['MY_ROBOT'] # Set the environment variable in bashrc
-MY_NEO_ENVIRONMENT = os.environ['MY_ROBOT_ENVIRONMENT'] # Set the environment variable in bashrc
 ROBOT_ID = 'jetbot'
 MAP_ID = 'c82eosv1'
 
 def generate_launch_description():
-    use_sim_time = LaunchConfiguration('use_sim_time', default='true')
+    use_sim_time = LaunchConfiguration('use_sim_time', default='false')
     map_dir = LaunchConfiguration(
         'map',
         default=os.path.join(
@@ -48,7 +46,7 @@ def generate_launch_description():
 
         DeclareLaunchArgument(
             'use_sim_time',
-            default_value='true',
+            default_value='false',
             description='Use simulation (Gazebo) clock if true'),
 
         IncludeLaunchDescription(
