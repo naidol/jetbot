@@ -13,7 +13,7 @@ from launch_ros.actions import Node
 MY_NEO_ROBOT = os.environ['MY_ROBOT'] # Set the environment variable in bashrc
 MY_NEO_ENVIRONMENT = os.environ['MY_ROBOT_ENVIRONMENT'] # Set the environment variable in bashrc
 ROBOT_ID = 'jetbot'
-MAP_ID = 'c82map'
+MAP_ID = 'c82eosv1'
 
 def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
