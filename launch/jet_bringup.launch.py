@@ -12,15 +12,12 @@ from launch_ros.substitutions import FindPackageShare
 import os
 from pathlib import Path
 
-# ROBOT_ID = os.environ['MY_ROBOT'] # Set the environment variable in bashrc
-# ROBOT_ENV_ID = os.environ['MY_ROBOT_ENVIRONMENT'] # Set the environment variable in bashrc
 ROBOT_ID = 'jetbot'
 
 def generate_launch_description():
     urdf = os.path.join(get_package_share_directory('jetbot'), 'urdf/', ROBOT_ID+'.urdf')
-    #ekf_config_path = os.path.join(get_package_share_directory('jetbot'), 'config/', 'ekf.yaml')
     ekf_config_path = PathJoinSubstitution([FindPackageShare("jetbot"), "config", "ekf.yaml"])
-    rviz_config_dir = os.path.join(get_package_share_directory('nav2_bringup'),'rviz','nav2_default_view.rviz')
+    # rviz_config_dir = os.path.join(get_package_share_directory('nav2_bringup'),'rviz','nav2_default_view.rviz')
     
     
     start_robot_state_pub = Node(
@@ -72,20 +69,21 @@ def generate_launch_description():
         remappings=[("odometry/filtered", "odom")]
     )
 
-    rviz =  Node(
-            package='rviz2',
-            executable='rviz2',
-            name='rviz2',
-            arguments=['-d', rviz_config_dir],
-            #parameters=[{'use_sim_time': use_sim_time}],
-            output='screen'
-    )
+    # rviz =  Node(
+    #         package='rviz2',
+    #         executable='rviz2',
+    #         name='rviz2',
+    #         arguments=['-d', rviz_config_dir],
+    #         #parameters=[{'use_sim_time': use_sim_time}],
+    #         output='screen'
+    # )
 
 
     return LaunchDescription([  start_robot_state_pub,
                                 start_joint_state_pub,
                                 uros_teensy,
                                 robot_localisation,
-                                rplidar, 
-                                rviz]
+                                rplidar 
+                                # rviz
+                                ]
     )
