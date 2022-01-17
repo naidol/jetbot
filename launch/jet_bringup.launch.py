@@ -79,10 +79,10 @@ def generate_launch_description():
     # )
 
 
-    return LaunchDescription([  start_robot_state_pub,
-                                start_joint_state_pub,
-                                uros_teensy,
+    return LaunchDescription([  uros_teensy,
                                 robot_localisation,
+                                start_joint_state_pub,
+                                start_robot_state_pub,
                                 rplidar 
                                 # rviz
                                 ]

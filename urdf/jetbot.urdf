@@ -197,7 +197,7 @@
                      iyy="0.01" iyz="0.0"
                      izz="0.01"/>
         </inertial>
-        <sensor name="lidar" type="ray">
+        <!-- <sensor name="lidar" type="ray">
             <pose>0 0 0 0 0 0</pose>
             <always_on>true</always_on>
             <visualize>true</visualize>
@@ -229,7 +229,7 @@
               <output_type>sensor_msgs/LaserScan</output_type>
               <frame_name>lidar_link</frame_name>
             </plugin>
-          </sensor>
+          </sensor> -->
     </link>
 
     <joint name="lidar_joint" type="fixed">
@@ -361,11 +361,10 @@
         <origin xyz="-0.038 0 0.014"/>
     </joint>
       
-    <gazebo reference="imu_link">
+    <!-- <gazebo reference="imu_link">
         <sensor name="imu_sensor" type="imu">
             <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
                 <ros>
-                    <!-- <namespace>/demo</namespace> -->
                     <remapping>~/out:=imu</remapping>
                 </ros>
                 <initial_orientation_as_reference>false</initial_orientation_as_reference>
@@ -429,7 +428,7 @@
                 </linear_acceleration>
             </imu>
         </sensor>
-    </gazebo>
+    </gazebo> -->
 
     <!-- ADD COLOURS TO THE ROBOT COMPONENTS -->
     <gazebo reference="wheel_front_left_link">
