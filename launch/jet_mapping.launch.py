@@ -40,12 +40,12 @@ def generate_launch_description():
             default_value='false',
             description='Use simulation (Gazebo) clock if true'),
 
-        Node(
-            package='rviz2',
-            executable='rviz2',
-            name='rviz2',
-            arguments=['-d', rviz_config_dir],
-            output='screen'),
+        # Node(
+        #     package='rviz2',
+        #     executable='rviz2',
+        #     name='rviz2',
+        #     arguments=['-d', rviz_config_dir],
+        #     output='screen'),
 
         Node(
             package='slam_toolbox', executable='sync_slam_toolbox_node', output='screen',
